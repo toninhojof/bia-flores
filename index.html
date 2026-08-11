@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bia Flores — Floricultura</title>
+<meta name="description" content="Receba suas flores hoje em Mogi das Cruzes. Buquês, arranjos, orquídeas e presentes.">
+<meta name="theme-color" content="#2E7D32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-512.png">
+<style>
+  *{ -webkit-tap-highlight-color: transparent }
+  html,body{ font-family: 'Outfit', system-ui, -apple-system, sans-serif; background:#fff }
+  .no-scrollbar::-webkit-scrollbar{display:none}
+  .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none }
+  .line-2{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden }
+</style>
+</head>
+<body class="bg-white text-zinc-900 antialiased overflow-x-hidden">
+  <!-- FAIXA TOPO -->
+  <div class="w-full bg-[#2E7D32] text-white text-center">
+    <p class="text-[12px] sm:text-[13px] font-medium tracking-wide py-2 px-3">RECEBA SUAS FLORES HOJE – pedidos até 18h em Mogi das Cruzes e região</p>
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-zinc-100">
+    <div class="max-w-[1100px] mx-auto px-4 h-[60px] flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-[#2E7D32] flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5c0 3.5 5 9 5 9s5-5.5 5-9a5 5 0 0 0-5-5z"/><circle cx="12" cy="7" r="2"/></svg>
+        </div>
+        <h1 class="text-[20px] font-semibold tracking-tight">Bia <span class="text-[#2E7D32]">Flores</span></h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="searchBtn" class="w-9 h-9 grid place-items-center rounded-full hover:bg-zinc-100">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3"/></svg>
+        </button>
+        <button id="cartBtn" class="relative w-9 h-9 grid place-items-center rounded-full hover:bg-zinc-100">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6l-2-3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+          <span id="cartCount" class="absolute -top-1 -right-1 bg-[#2E7D32] text-white text-[10px] min-w-[18px] h-[18px] px-1 rounded-full grid place-items-center font-medium hidden">0</span>
+        </button>
+      </div>
+    </div>
+    <!-- BARRA DÚVIDAS -->
+    <div class="border-t border-zinc-100 bg-[#fafafa]">
+      <div class="max-w-[1100px] mx-auto px-4 h-10 flex items-center justify-between text-[13px]">
+        <span class="text-zinc-600">Dúvidas? Chame no Whats</span>
+        <a href="https://wa.me/5511987654321?text=Ol%C3%A1%20Bia%20Flores!%20Preciso%20de%20ajuda%20com%20um%20pedido." target="_blank" class="flex items-center gap-1.5 font-medium text-[#2E7D32] hover:opacity-80">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0 12 12 0 0 0 1.7 18.4L0 24l5.7-1.5A12 12 0 1 0 20.5 3.5ZM12 22a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.4.9.9-3.3-.2-.4A9.9 9.9 0 1 1 12 22Zm5.4-7.5c-.3-.1-1.8-.9-2-1s-.5-.1-.7.2-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.2-.5s0-.4 0-.6-.7-1.7-1-2.3c-.2-.5-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.5 6.5 0 0 0 1.4 3.4 14.8 14.8 0 0 0 5.7 5 6.3 6.3 0 0 0 3 .8 3 3 0 0 0 2-1 2.5 2.5 0 0 0 .6-1.6c0-.2 0-.4-.2-.5Z"/></svg>
+          (11) 98765-4321
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CALCULAR CEP -->
+  <section class="max-w-[1100px] mx-auto px-4 py-3">
+    <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-3 flex flex-col sm:flex-row gap-2 sm:items-center">
+      <div class="flex items-center gap-2 text-sm text-zinc-700 flex-1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="font-medium">Entrega hoje em Mogi</span>
+      </div>
+      <div class="flex gap-2 w-full sm:w-auto">
+        <input id="cepInput" inputmode="numeric" maxlength="9" placeholder="Digite seu CEP" class="flex-1 sm:w-[160px] h-10 rounded-full border border-zinc-300 px-4 text-[14px] outline-none focus:ring-2 focus:ring-[#2E7D32]/30 focus:border-[#2E7D32] bg-white">
+        <button id="calcCep" class="h-10 px-5 rounded-full bg-zinc-900 text-white text-[14px] font-medium hover:bg-black active:scale-[.98]">Calcular</button>
+      </div>
+    </div>
+    <p id="cepResult" class="text-[12px] text-zinc-600 mt-2 hidden px-1"></p>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <nav class="max-w-[1100px] mx-auto px-4">
+    <div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+      <button data-cat="todos" class="cat-btn whitespace-nowrap px-4 h-9 rounded-full border border-zinc-900 bg-zinc-900 text-white text-[13px] font-medium">Todos</button>
+      <button data-cat="Buquês" class="cat-btn whitespace-nowrap px-4 h-9 rounded-full border border-zinc-200 bg-white text-[13px] font-medium hover:bg-zinc-50">Buquês</button>
+      <button data-cat="Arranjos" class="cat-btn whitespace-nowrap px-4 h-9 rounded-full border border-zinc-200 bg-white text-[13px] font-medium hover:bg-zinc-50">Arranjos</button>
+      <button data-cat="Plantas" class="cat-btn whitespace-nowrap px-4 h-9 rounded-full border border-zinc-200 bg-white text-[13px] font-medium hover:bg-zinc-50">Plantas</button>
+      <button data-cat="Presentes" class="cat-btn whitespace-nowrap px-4 h-9 rounded-full border border-zinc-200 bg-white text-[13px] font-medium hover:bg-zinc-50">Presentes</button>
+    </div>
+  </nav>
+
+  <main class="max-w-[1100px] mx-auto pb-24">
+    <!-- NOVIDADES -->
+    <section class="mt-4">
+      <div class="px-4 flex items-end justify-between">
+        <h2 class="text-[22px] font-semibold tracking-tight">Novidades</h2>
+        <a href="#buques" class="text-[13px] text-zinc-600 hover:text-black">ver tudo</a>
+      </div>
+      <div id="grid-novidades" class="mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4"></div>
+    </section>
+
+    <!-- BUQUÊS -->
+    <section id="buques" class="mt-8">
+      <h2 class="px-4 text-[22px] font-semibold tracking-tight">Buquês</h2>
+      <div id="grid-buques" class="mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4"></div>
+    </section>
+
+    <!-- ARRANJOS -->
+    <section class="mt-8">
+      <h2 class="px-4 text-[22px] font-semibold tracking-tight">Arranjos</h2>
+      <div id="grid-arranjos" class="mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4"></div>
+    </section>
+
+    <!-- PLANTAS -->
+    <section class="mt-8">
+      <h2 class="px-4 text-[22px] font-semibold tracking-tight">Plantas</h2>
+      <div id="grid-plantas" class="mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4"></div>
+    </section>
+
+    <!-- PRESENTES -->
+    <section class="mt-8">
+      <h2 class="px-4 text-[22px] font-semibold tracking-tight">Presentes</h2>
+      <div id="grid-presentes" class="mt-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4"></div>
+    </section>
+
+    <!-- BANNER ENTREGA -->
+    <section class="px-4 mt-10">
+      <div class="rounded-[28px] bg-gradient-to-br from-[#E8F5E9] to-[#F1F8E9] border border-[#C8E6C9] p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <h3 class="text-[20px] font-semibold text-[#1B5E20]">Entrega em até 3h</h3>
+          <p class="text-[14px] text-[#2E7D32] mt-1">Mogi das Cruzes, Suzano, Itaquaquecetuba e região. Pedidos até 18h.</p>
+        </div>
+        <a href="https://wa.me/5511987654321?text=Quero%20entrega%20hoje!" target="_blank" class="h-11 px-5 rounded-full bg-[#2E7D32] text-white text-[14px] font-medium grid place-items-center hover:brightness-110 active:scale-95">Pedir no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="border-t border-zinc-200 bg-[#fafafa]">
+    <div class="max-w-[1100px] mx-auto px-4 py-10">
+      <div class="flex flex-col md:flex-row gap-8 md:items-start md:justify-between">
+        <div>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-[#2E7D32] grid place-items-center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5c0 3.5 5 9s5-5.5 5-9a5 5 0 0 0-5-5z"/><circle cx="12" cy="7" r="2"/></svg>
+            </div>
+            <span class="font-semibold text-[18px]">Bia Flores</span>
+          </div>
+          <p class="text-[13px] text-zinc-600 mt-2 max-w-[320px]">Floricultura artesanal em Mogi das Cruzes. Flores frescas todos os dias, com carinho do Toninho desde 1998.</p>
+          <a href="https://instagram.com/tonys.variedades" target="_blank" class="inline-flex items-center gap-2 mt-4 text-[14px] font-medium hover:text-[#2E7D32]">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+            Estamos no Instagram @tonys.variedades
+          </a>
+        </div>
+        <div class="w-full md:w-[360px]">
+          <h4 class="font-semibold">Receba ofertas e novidades</h4>
+          <p class="text-[13px] text-zinc-600 mt-1">10% OFF na primeira compra por e-mail.</p>
+          <form id="newsForm" class="mt-3 flex gap-2">
+            <input required type="email" placeholder="Seu e-mail" class="flex-1 h-11 rounded-full border border-zinc-300 px-4 text-[14px] outline-none focus:ring-2 focus:ring-[#2E7D32]/30">
+            <button class="h-11 px-5 rounded-full bg-zinc-900 text-white text-[14px] font-medium hover:bg-black">Assinar</button>
+          </form>
+          <p id="newsMsg" class="text-[12px] text-[#2E7D32] mt-2 hidden">Pronto! Verifique seu e-mail.</p>
+        </div>
+      <div class="mt-8 pt-6 border-t border-zinc-200 text-[12px] text-zinc-500 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+        <span>© 2025 Bia Flores – Mogi das Cruzes/SP</span>
+        <span>Pagamentos via Pix, Cartão e WhatsApp</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE INSTAGRAM -->
+  <a href="https://instagram.com/tonys.variedades" target="_blank" aria-label="Instagram" class="fixed right-4 bottom-5 z-30 w-12 h-12 rounded-full shadow-lg grid place-items-center text-white" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  </a>
+
+  <!-- CARRINHO LATERAL -->
+  <div id="overlay" class="fixed inset-0 bg-black/40 z-40 hidden opacity-0 transition-opacity"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 h-[100dvh] w-[92%] max-w-[400px] bg-white z-50 translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <div class="h-[60px] px-4 flex items-center justify-between border-b">
+      <h3 class="font-semibold text-[18px]">Seu carrinho</h3>
+      <button id="closeCart" class="w-9 h-9 grid place-items-center rounded-full hover:bg-zinc-100">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+    <div class="border-t p-4 bg-white">
+      <div class="flex items-center justify-between text-[14px]">
+        <span class="text-zinc-600">Subtotal</span>
+        <span id="cartSubtotal" class="font-semibold">R$ 0,00</span>
+      </div>
+      <p class="text-[12px] text-zinc-500 mt-1">Entrega calculada no WhatsApp</p>
+      <button id="checkoutWA" class="mt-3 w-full h-12 rounded-full bg-[#2E7D32] text-white font-medium hover:brightness-110 active:scale-[.99] flex items-center justify-center gap-2">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 12 0 0 0 1.7 18.4L0 24l5.7-1.5A12 12 0 1 0 20.5 3.5ZM12 22a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-3.4.9.9-3.3-.2-.4A9.9 9.9 0 1 1 12 22Z"/></svg>
+        Comprar no WhatsApp
+      </button>
+      <button id="clearCart" class="mt-2 w-full h-10 rounded-full border text-[13px] hover:bg-zinc-50">Esvaziar</button>
+    </div>
+  </aside>
+
+  <!-- QUICK VIEW -->
+  <div id="quickView" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black/60" id="qvBackdrop"></div>
+    <div class="relative z-10 max-w-[520px] mx-auto mt-[5vh] bg-white rounded-[28px] overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
+      <button id="qvClose" class="absolute top-3 right-3 w-9 h-9 grid place-items-center bg-white/90 rounded-full hover:bg-white z-10">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="aspect-square bg-zinc-100">
+        <img id="qvImg" src="" alt="" class="w-full h-full object-cover">
+      </div>
+      <div class="p-5 overflow-auto">
+        <div id="qvTag" class="hidden inline-flex items-center px-2.5 py-1 rounded-full bg-black text-white text-[11px] font-medium mb-2"></div>
+        <h3 id="qvName" class="text-[22px] font-semibold leading-tight"></h3>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="qvOriginal" class="text-[14px] text-zinc-400 line-through hidden"></span>
+          <div class="flex items-baseline gap-1">
+            <span class="text-[14px]">R$</span>
+            <span id="qvPrice" class="text-[28px] font-semibold"></span>
+          </div>
+        </div>
+        <p id="qvInstall" class="text-[13px] text-zinc-600 mt-1"></p>
+        <div class="mt-5 flex gap-2">
+          <button id="qvAdd" class="flex-1 h-12 rounded-full bg-zinc-900 text-white font-medium hover:bg-black">Adicionar ao carrinho</button>
+          <button id="qvWA" class="flex-1 h-12 rounded-full border-2 border-[#2E7D32] text-[#2E7D32] font-medium hover:bg-[#2E7D32]/5">Comprar no WhatsApp</button>
+        </div>
+        <p class="text-[12px] text-zinc-500 mt-3">Entrega hoje para Mogi das Cruzes. Embalagem premium e cartão incluso.</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const WHATS = '5511987654321';
+  const produtos = [
+    { id:1, nome:"Buquê 12 Rosas Vermelhas", preco:169.90, original:189.90, desconto:"10% OFF", categoria:"Buquês", parcela:"2x de R$84,95 sem juros", img:"https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800&auto=format&fit=crop" },
+    { id:2, nome:"Orquídea Phalaenopsis Branca", preco:149.00, original:null, desconto:null, categoria:"Plantas", parcela:"2x de R$74,50 sem juros", img:"https://images.unsplash.com/photo-1501003878151-d3709390e8a3?q=80&w=800&auto=format&fit=crop" },
+    { id:3, nome:"Arranjo Mix Flores do Campo", preco:110.42, original:129.90, desconto:"15% OFF", categoria:"Arranjos", parcela:"2x de R$55,21 sem juros", img:"https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?q=80&w=800&auto=format&fit=crop" },
+    { id:4, nome:"Suculentas Kit 3 un", preco:89.90, original:null, desconto:null, categoria:"Plantas", parcela:"2x de R$44,95 sem juros", img:"https://images.unsplash.com/photo-1509423350716-97f9360b4e09?q=80&w=800&auto=format&fit=crop" },
+    { id:5, nome:"Buquê Girassóis", preco:143.10, original:159.00, desconto:"10% OFF", categoria:"Buquês", parcela:"2x de R$71,55 sem juros", img:"https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=800&auto=format&fit=crop" },
+    { id:6, nome:"Cesta Café + Flores", preco:249.90, original:null, desconto:null, categoria:"Presentes", parcela:"2x de R$124,95 sem juros", img:"https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=800&auto=format&fit=crop" },
+    { id:7, nome:"Buquê Rosas Pink 12 un", preco:179.90, original:199.90, desconto:"10% OFF", categoria:"Buquês", parcela:"2x de R$89,95 sem juros", img:"https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=800&auto=format&fit=crop" },
+    { id:8, nome:"Arranjo Tropical Vaso", preco:189.00, original:null, desconto:null, categoria:"Arranjos", parcela:"2x de R$94,50 sem juros", img:"https://images.unsplash.com/photo-1496062031456-07b8f162a322?q=80&w=800&auto=format&fit=crop" },
+  ];
+
+  const fmt = v => v.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+  function card(p){
+    return `
+    <article class="group">
+      <div class="relative aspect-square bg-zinc-100 rounded-[20px] overflow-hidden">
+        <img src="${p.img}" alt="${p.nome}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        ${p.desconto ? `<span class="absolute top-2 left-2 bg-black text-white text-[11px] px-2.5 py-1 rounded-full font-medium tracking-wide">${p.desconto}</span>`:''}
+        <button data-id="${p.id}" class="espiar absolute bottom-2 right-2 h-8 px-3 rounded-full bg-white/95 backdrop-blur border border-zinc-200 text-[12px] font-medium hover:bg-white shadow-sm">Espiar</button>
+      </div>
+      <div class="pt-2.5 px-0.5">
+        <h3 class="text-[14px] leading-snug font-medium text-zinc-800 line-2 min-h-[40px]">${p.nome}</h3>
+        <div class="mt-1.5">
+          ${p.original ? `<div class="text-[12px] text-zinc-400 line-through">R$ ${fmt(p.original)}</div>`:''}
+          <div class="flex items-baseline gap-1">
+            <span class="text-[12px]">R$</span>
+            <span class="text-[22px] font-semibold tracking-tight">${fmt(p.preco)}</span>
+          </div>
+          <p class="text-[11px] text-zinc-500 -mt-0.5">${p.parcela}</p>
+        </div>
+      </div>
+    </article>`;
+  }
+
+  function renderGrid(id, list){ document.getElementById(id).innerHTML = list.map(card).join(''); attachEspiar(); }
+  
+  renderGrid('grid-novidades', produtos.filter(p=>p.desconto).concat(produtos.slice(0,4)).slice(0,4));
+  renderGrid('grid-buques', produtos.filter(p=>p.categoria==='Buquês'));
+  renderGrid('grid-arranjos', produtos.filter(p=>p.categoria==='Arranjos'));
+  renderGrid('grid-plantas', produtos.filter(p=>p.categoria==='Plantas'));
+  renderGrid('grid-presentes', produtos.filter(p=>p.categoria==='Presentes'));
+
+  // Categorias filtro
+  document.querySelectorAll('.cat-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.cat-btn').forEach(b=>{ b.classList.remove('bg-zinc-900','text-white','border-zinc-900'); b.classList.add('bg-white','border-zinc-200'); });
+      btn.classList.add('bg-zinc-900','text-white','border-zinc-900');
+      const cat = btn.dataset.cat;
+      const target = document.getElementById('buques');
+      if(cat==='todos'){ window.scrollTo({top: target.offsetTop-80, behavior:'smooth'}); return; }
+      const map = { 'Buquês':'grid-buques','Arranjos':'grid-arranjos','Plantas':'grid-plantas','Presentes':'grid-presentes' };
+      document.getElementById(map[cat]).scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // CEP
+  const cepInput = document.getElementById('cepInput');
+  const cepResult = document.getElementById('cepResult');
+  document.getElementById('calcCep').addEventListener('click', ()=>{
+    const cep = cepInput.value.replace(/\D/g,'');
+    if(cep.length<8){ cepResult.textContent='Digite um CEP válido.'; cepResult.classList.remove('hidden'); return; }
+    cepResult.classList.remove('hidden');
+    if(cep.startsWith('087') || cep.startsWith('088')){
+      cepResult.innerHTML = '✓ Entrega hoje em <b>Mogi das Cruzes</b> – FRETE GRÁTIS para compras acima de R$ 149';
+    } else if(cep.startsWith('08') || cep.startsWith('07')){
+      cepResult.innerHTML = '✓ Entrega hoje na região – taxa R$ 19,90';
+    } else {
+      cepResult.innerHTML = 'Entrega via transportadora (consulte no WhatsApp)';
+    }
+  });
+  cepInput.addEventListener('input', e=>{
+    let v = e.target.value.replace(/\D/g,'').slice(0,8);
+    if(v.length>5) v = v.slice(0,5)+'-'+v.slice(5);
+    e.target.value = v;
+  });
+
+  // Carrinho
+  let cart = JSON.parse(localStorage.getItem('ft_cart')||'[]');
+  const cartCount = document.getElementById('cartCount');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const overlay = document.getElementById('overlay');
+  const cartItems = document.getElementById('cartItems');
+  const cartSubtotal = document.getElementById('cartSubtotal');
+
+  function saveCart(){ localStorage.setItem('ft_cart', JSON.stringify(cart)); }
+  function updateCartUI(){
+    const totalQty = cart.reduce((s,i)=>s+i.qty,0);
+    cartCount.textContent = totalQty;
+    cartCount.classList.toggle('hidden', totalQty===0);
+    cartItems.innerHTML = cart.length ? cart.map(item=>{
+      const p = produtos.find(x=>x.id===item.id);
+      return `
+      <div class="flex gap-3 p-3 border border-zinc-200 rounded-2xl">
+        <img src="${p.img}" class="w-20 h-20 object-cover rounded-xl bg-zinc-100">
+        <div class="flex-1 min-w-0">
+          <h4 class="text-[14px] font-medium leading-snug line-2">${p.nome}</h4>
+          <p class="text-[13px] text-zinc-600 mt-0.5">R$ ${fmt(p.preco)}</p>
+          <div class="mt-2 flex items-center gap-2">
+            <button data-id="${p.id}" data-act="dec" class="w-7 h-7 grid place-items-center rounded-full border hover:bg-zinc-50">−</button>
+            <span class="text-[13px] w-6 text-center">${item.qty}</span>
+            <button data-id="${p.id}" data-act="inc" class="w-7 h-7 grid place-items-center rounded-full border hover:bg-zinc-50">+</button>
+            <button data-id="${p.id}" data-act="del" class="ml-auto text-[12px] text-zinc-500 hover:text-red-600">remover</button>
+          </div>
+        </div>
+      </div>`;
+    }).join('') : `<div class="text-center py-16 text-zinc-500"><p class="text-[15px]">Seu carrinho está vazio</p><p class="text-[13px] mt-1">Escolha um buquê lindo para começar 💐</p></div>`;
+    const subtotal = cart.reduce((s,i)=>{ const p=produtos.find(x=>x.id===i.id); return s + p.preco*i.qty },0);
+    cartSubtotal.textContent = 'R$ ' + fmt(subtotal);
+    // bind qty
+    cartItems.querySelectorAll('button').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        const id = +b.dataset.id, act=b.dataset.act;
+        const it = cart.find(x=>x.id===id);
+        if(act==='inc') it.qty++;
+        if(act==='dec') { it.qty--; if(it.qty<=0) cart = cart.filter(x=>x.id!==id); }
+        if(act==='del') cart = cart.filter(x=>x.id!==id);
+        saveCart(); updateCartUI();
+      });
+    });
+  }
+  function openCart(){ cartDrawer.classList.remove('translate-x-full'); overlay.classList.remove('hidden'); setTimeout(()=>overlay.classList.remove('opacity-0'),10); }
+  function closeCart(){ cartDrawer.classList.add('translate-x-full'); overlay.classList.add('opacity-0'); setTimeout(()=>overlay.classList.add('hidden'),200); }
+  document.getElementById('cartBtn').addEventListener('click', openCart);
+  document.getElementById('closeCart').addEventListener('click', closeCart);
+  overlay.addEventListener('click', closeCart);
+  document.getElementById('clearCart').addEventListener('click', ()=>{ cart=[]; saveCart(); updateCartUI(); });
+
+  function addToCart(id){ const ex=cart.find(x=>x.id===id); if(ex) ex.qty++; else cart.push({id, qty:1}); saveCart(); updateCartUI(); openCart(); }
+
+  document.getElementById('checkoutWA').addEventListener('click', ()=>{
+    if(!cart.length){ openCart(); return; }
+    const lines = cart.map(i=>{ const p=produtos.find(x=>x.id===i.id); return `• ${i.qty}x ${p.nome} – R$ ${fmt(p.preco*i.qty)}` }).join('%0A');
+    const total = cart.reduce((s,i)=>s+produtos.find(x=>x.id===i.id).preco*i.qty,0);
+    const msg = `Olá Bia Flores! Quero finalizar:%0A${lines}%0A%0ATotal: R$ ${fmt(total)}%0A%0AMeu CEP: `;
+    window.open(`https://wa.me/${WHATS}?text=${msg}`, '_blank');
+  });
+
+  updateCartUI();
+
+  // Quick View
+  const qv = document.getElementById('quickView');
+  const qvImg = document.getElementById('qvImg');
+  const qvName = document.getElementById('qvName');
+  const qvPrice = document.getElementById('qvPrice');
+  const qvOriginal = document.getElementById('qvOriginal');
+  const qvInstall = document.getElementById('qvInstall');
+  const qvTag = document.getElementById('qvTag');
+  let qvCurrent = null;
+
+  function openQV(p){
+    qvCurrent = p;
+    qvImg.src = p.img;
+    qvName.textContent = p.nome;
+    qvPrice.textContent = fmt(p.preco);
+    qvInstall.textContent = p.parcela;
+    if(p.original){ qvOriginal.textContent = 'R$ '+fmt(p.original); qvOriginal.classList.remove('hidden'); } else qvOriginal.classList.add('hidden');
+    if(p.desconto){ qvTag.textContent = p.desconto; qvTag.classList.remove('hidden'); } else qvTag.classList.add('hidden');
+    qv.classList.remove('hidden');
+    document.body.style.overflow='hidden';
+  }
+  function closeQV(){ qv.classList.add('hidden'); document.body.style.overflow=''; }
+  document.getElementById('qvClose').addEventListener('click', closeQV);
+  document.getElementById('qvBackdrop').addEventListener('click', closeQV);
+  document.getElementById('qvAdd').addEventListener('click', ()=>{ if(qvCurrent) addToCart(qvCurrent.id); closeQV(); });
+  document.getElementById('qvWA').addEventListener('click', ()=>{
+    if(!qvCurrent) return;
+    const msg = `Olá! Quero comprar o ${qvCurrent.nome} (R$ ${fmt(qvCurrent.preco)}) da Bia Flores.`;
+    window.open(`https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+
+  function attachEspiar(){
+    document.querySelectorAll('.espiar').forEach(btn=>{
+      btn.onclick = ()=>{ const p = produtos.find(x=>x.id===+btn.dataset.id); openQV(p); };
+    });
+  }
+
+  // Newsletter
+  document.getElementById('newsForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    document.getElementById('newsMsg').classList.remove('hidden');
+    e.target.reset();
+  });
+
+  // Search (simples)
+  document.getElementById('searchBtn').addEventListener('click', ()=>{
+    const term = prompt('O que você procura? Ex: rosas, orquídea, girassol');
+    if(!term) return;
+    const found = produtos.filter(p=>p.nome.toLowerCase().includes(term.toLowerCase()));
+    if(found.length){ renderGrid('grid-novidades', found); document.getElementById('grid-novidades').scrollIntoView({behavior:'smooth'}); }
+    else alert('Nenhum produto encontrado. Chame no WhatsApp que ajudamos!');
+  });
+
+  // PWA SW
+  if('serviceWorker' in navigator){
+    const sw = `self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>self.clients.claim());`;
+    const blob = new Blob([sw], {type:'application/javascript'});
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  }
+});
+</script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>
